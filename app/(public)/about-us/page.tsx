@@ -1,6 +1,6 @@
 const AboutPage = () => {
   return (
-    <main>
+    <main className="min-h-screen">
       <h1>About</h1>
     </main>
   );

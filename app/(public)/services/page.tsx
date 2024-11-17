@@ -1,6 +1,6 @@
 const ServicesPage = () => {
   return (
-    <main>
+    <main className="min-h-screen">
       <h1>Services</h1>
     </main>
   );

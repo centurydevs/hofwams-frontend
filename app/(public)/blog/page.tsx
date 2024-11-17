@@ -1,6 +1,6 @@
 const BlogPage = () => {
   return (
-    <main>
+    <main className="min-h-screen">
       <h1>Blog</h1>
     </main>
   );
