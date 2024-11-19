@@ -78,8 +78,9 @@ export const Header = ({ isScrolled }: HeaderProps) => {
                     ? "text-gray-700 dark:text-gray-300"
                     : "text-gray-300",
                   isActive(item)
-                    ? "text-green-700 dark:text-green-500 font-semibold"
-                    : "hover:text-green-700 dark:hover:text-green-500"
+                    ? "text-green-700 dark:text-green-500 font-bold"
+                    : "hover:text-green-700 dark:hover:text-green-500",
+                  isActive(item) && !isScrolled && "text-green-100"
                 )}
                 aria-current={isActive(item) ? "page" : undefined}
               >
@@ -90,8 +91,18 @@ export const Header = ({ isScrolled }: HeaderProps) => {
 
           <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggler />
-            <Button variant="ghost">Log In</Button>
-            <Button className="bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700">
+            <Button
+              variant="ghost"
+              className={cn(
+                "hover:bg-[#ECF8F2] hover:text-[#00AB55] duration-300 justify-center",
+                isScrolled
+                  ? "text-gray-700 dark:hover:bg-[#00AB5529] dark:text-gray-100 dark:hover:text-[#00AB55]"
+                  : "text-gray-100"
+              )}
+            >
+              Log In
+            </Button>
+            <Button className="bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 text-gray-100">
               Get Started
             </Button>
           </div>
@@ -133,7 +144,7 @@ export const Header = ({ isScrolled }: HeaderProps) => {
                       "transition-colors px-4 py-2 block",
                       isScrolled
                         ? "text-gray-700 dark:text-gray-300"
-                        : "text-gray-300",
+                        : "text-gray-500",
                       isActive(item)
                         ? "text-green-700 dark:text-green-500 font-semibold"
                         : "hover:text-green-700 dark:hover:text-green-500"
@@ -154,16 +165,13 @@ export const Header = ({ isScrolled }: HeaderProps) => {
               >
                 <Button
                   variant="ghost"
-                  className={cn(
-                    "justify-start",
-                    isScrolled ? "text-gray-700" : "text-gray-300"
-                  )}
+                  className="hover:bg-[#ECF8F2] hover:text-[#00AB55] duration-300 justify-center text-gray-700 dark:hover:bg-[#00AB5529] dark:text-gray-100 dark:hover:text-[#00AB55]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Log In
                 </Button>
                 <Button
-                  className="bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700"
+                  className="bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 text-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get Started
