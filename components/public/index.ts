@@ -1,3 +1,7 @@
+import { FeatureComparison } from "./services/feature-comparison";
+import { OrganizationFeatures } from "./services/organization-features";
+import { IndividualFeatures } from "./services/individual-features";
+import { ServicesHero } from "./services/hero";
 import { Sustainability } from "./about/sustainability";
 import { Vision } from "./about/vision";
 import { OurApproach } from "./about/our-approach";
@@ -18,12 +22,16 @@ export {
   AboutHero,
   AboutFeatures,
   Features,
+  FeatureComparison,
   Footer,
   Header,
   HomeHero,
   HowItWorks,
+  IndividualFeatures,
+  OrganizationFeatures,
   OurApproach,
   ProblemStatement,
+  ServicesHero,
   Sustainability,
   VisionSection,
   Vision,
