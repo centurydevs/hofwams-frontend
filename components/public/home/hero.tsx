@@ -21,14 +21,14 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-green-900/95 via-green-800/80 to-transparent dark:from-green-950/95 dark:via-green-900/80" />
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 pt-32 pb-20">
+      <div className="relative container mx-auto px-4 pt-40 pb-20">
         <motion.div
           initial="initial"
           animate="animate"
           variants={fadeInUp}
           className="max-w-3xl text-white"
         >
-          <h1 className="font-fraunces text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+          <h1 className="font-fraunces text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             Optimize Your Food Supply, Reduce Waste And Save Cost
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-100">

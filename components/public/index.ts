@@ -1,5 +1,33 @@
+import { Sustainability } from "./about/sustainability";
+import { Vision } from "./about/vision";
+import { OurApproach } from "./about/our-approach";
+import { Welcome } from "./about/welcome";
+import { AboutHero } from "./about/hero";
+import { VisionSection } from "./home/vision";
+import { HowItWorks } from "./home/how-it-works";
+import { WhyChooseUs } from "./home/why-choose-us";
+import { ProblemStatement } from "./home/problem-statement";
 import { Hero as HomeHero } from "@/components/public/home/hero";
 import { Header } from "@/components/public/header";
+import { Features } from "@/components/public/home/features";
+import { Features as AboutFeatures } from "@/components/public/about/features";
+import { WhatWeDo } from "@/components/public/home/what-we-do";
 import { Footer } from "./footer";
 
-export { Footer, Header, HomeHero };
+export {
+  AboutHero,
+  AboutFeatures,
+  Features,
+  Footer,
+  Header,
+  HomeHero,
+  HowItWorks,
+  OurApproach,
+  ProblemStatement,
+  Sustainability,
+  VisionSection,
+  Vision,
+  Welcome,
+  WhatWeDo,
+  WhyChooseUs,
+};
