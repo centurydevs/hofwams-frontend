@@ -3,6 +3,7 @@ import { Poppins, Fraunces } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/common/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,6 +40,11 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Toaster
+          position="bottom-right"
+          toastOptions={{ duration: 5000 }}
+          richColors
+        />
       </body>
     </html>
   );
