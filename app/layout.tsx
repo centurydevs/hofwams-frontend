@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins, Fraunces } from "next/font/google";
 
-import "./globals.css";
 import { ThemeProvider } from "@/components/common/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { BackToTop } from "@/components/common/back-to-top";
+
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,6 +41,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <BackToTop />
         </ThemeProvider>
         <Toaster
           position="bottom-right"
