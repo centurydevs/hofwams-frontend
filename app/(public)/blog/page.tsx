@@ -1,9 +1,7 @@
+import { BlogComingSoon } from "@/components/public";
+
 const BlogPage = () => {
-  return (
-    <main className="min-h-screen">
-      <h1>Blog</h1>
-    </main>
-  );
+  return <BlogComingSoon />;
 };
 
 export default BlogPage;
