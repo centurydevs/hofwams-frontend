@@ -1,3 +1,4 @@
+import { BlogComingSoon } from "./blog/coming-soon";
 import { ContactForm } from "./contact/contact-form";
 import { ContactInfo } from "./contact/contact-info";
 import { ContactHero } from "./contact/hero";
@@ -24,6 +25,7 @@ import { Footer } from "./footer";
 export {
   AboutHero,
   AboutFeatures,
+  BlogComingSoon,
   ContactHero,
   ContactInfo,
   ContactForm,
