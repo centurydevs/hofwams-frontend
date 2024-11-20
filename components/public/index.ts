@@ -1,3 +1,6 @@
+import { ContactForm } from "./contact/contact-form";
+import { ContactInfo } from "./contact/contact-info";
+import { ContactHero } from "./contact/hero";
 import { FeatureComparison } from "./services/feature-comparison";
 import { OrganizationFeatures } from "./services/organization-features";
 import { IndividualFeatures } from "./services/individual-features";
@@ -21,6 +24,9 @@ import { Footer } from "./footer";
 export {
   AboutHero,
   AboutFeatures,
+  ContactHero,
+  ContactInfo,
+  ContactForm,
   Features,
   FeatureComparison,
   Footer,
