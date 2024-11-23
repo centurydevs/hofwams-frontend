@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { Logo } from "@/components/common/logo";
@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggler } from "@/components/ui/theme-toggler";
 
 import { cn } from "@/lib/utils";
+import { menuVariants } from "@/utils";
 
 type HeaderProps = {
   isScrolled: boolean;
@@ -19,31 +20,15 @@ type HeaderProps = {
 export const Header = ({ isScrolled }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { push } = useRouter();
+
+  const goToAuth = () => push("/auth");
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const navItems = ["Home", "About us", "Services", "Blog", "Contact us"];
-
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      height: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-    open: {
-      opacity: 1,
-      height: "auto",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-  };
 
   const isActive = (path: string) => {
     if (path === "Home") {
@@ -99,10 +84,14 @@ export const Header = ({ isScrolled }: HeaderProps) => {
                   ? "text-gray-700 dark:hover:bg-[#00AB5529] dark:text-gray-100 dark:hover:text-[#00AB55]"
                   : "text-gray-100"
               )}
+              onClick={goToAuth}
             >
               Log In
             </Button>
-            <Button className="bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 text-gray-100">
+            <Button
+              className="bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 text-gray-100"
+              onClick={goToAuth}
+            >
               Get Started
             </Button>
           </div>
@@ -166,13 +155,19 @@ export const Header = ({ isScrolled }: HeaderProps) => {
                 <Button
                   variant="ghost"
                   className="hover:bg-[#ECF8F2] hover:text-[#00AB55] duration-300 justify-center text-gray-700 dark:hover:bg-[#00AB5529] dark:text-gray-100 dark:hover:text-[#00AB55]"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    goToAuth();
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   Log In
                 </Button>
                 <Button
                   className="bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 text-gray-100"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    goToAuth();
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   Get Started
                 </Button>
