@@ -24,7 +24,7 @@ const demoEvents = Array.from({ length: 10 }, (_, i) => ({
       : ("pending" as "accepted" | "rejected" | "pending"),
 }));
 
-export default function DashboardPage() {
+export default function AdminDashboardPage() {
   return (
     <div className="space-y-6">
       <StatsCards stats={stats} />

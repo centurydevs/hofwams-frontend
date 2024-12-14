@@ -1,20 +1,14 @@
 "use client";
 
-import { ReactNode } from "react";
-
 import { Header, Sidebar } from "@/components/dashboard/organization/layout";
 
 import { adminNavItems } from "@/config";
-
-type AdminDashboardLayoutProps = {
-  children: ReactNode;
-  params: { organization: string };
-};
+import { OrgDashboardLayoutProps } from "@/types";
 
 export default function AdminDashboardLayout({
   children,
   params,
-}: AdminDashboardLayoutProps) {
+}: OrgDashboardLayoutProps) {
   const { organization } = params;
 
   console.log({ organization });

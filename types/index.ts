@@ -18,3 +18,8 @@ export type NavItem = {
   href: string
 }
 
+export type OrgDashboardLayoutProps = {
+  children: ReactNode;
+  params: { organization: string };
+};
+
