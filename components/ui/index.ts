@@ -60,6 +60,13 @@ import {
 } from "@/components/ui/popover";
 import { RadioGroup, RadioGroupItem } from "./radio-group";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+} from "./sheet";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
 import { Textarea } from "./textarea";
 import { ThemeToggler } from "./theme-toggler";
@@ -115,6 +122,11 @@ export {
   RadioGroup,
   RadioGroupItem,
   ScrollArea,
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
   Tabs,
   TabsList,
   TabsTrigger,
