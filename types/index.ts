@@ -14,7 +14,7 @@ export type DashboardStats = {
 
 export type NavItem = {
   title: string
-  icon: React.ComponentType
+  icon: React.ElementType
   href: string
 }
 

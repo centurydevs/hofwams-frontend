@@ -4,6 +4,7 @@
 
 body {
   font-family: Poppins, Fraunces, sans-serif;
+  overscroll-behavior: none;
 }
 
 @layer utilities {
