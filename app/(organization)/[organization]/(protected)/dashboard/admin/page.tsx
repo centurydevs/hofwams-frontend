@@ -3,6 +3,8 @@ import {
   EventsTable,
   StatsCards,
 } from "@/components/dashboard/organization/admin";
+import { ProtectedRoute } from "@/components/global/protected-route";
+import { UserRole } from "@/types";
 
 // Demo data
 const stats = {
@@ -26,12 +28,14 @@ const demoEvents = Array.from({ length: 10 }, (_, i) => ({
 
 export default function AdminDashboardPage() {
   return (
-    <div className="space-y-6">
-      <StatsCards stats={stats} />
-      <div className="grid gap-6 md:grid-cols-2">
-        <EventsTable data={demoEvents} title="Upcoming Events" />
-        <EventsTable data={demoEvents} title="Event Requests" />
+    <ProtectedRoute requiredRole={UserRole.ADMIN}>
+      <div className="space-y-6">
+        <StatsCards stats={stats} />
+        <div className="grid gap-6 md:grid-cols-2">
+          <EventsTable data={demoEvents} title="Upcoming Events" />
+          <EventsTable data={demoEvents} title="Event Requests" />
+        </div>
       </div>
-    </div>
+    </ProtectedRoute>
   );
 }

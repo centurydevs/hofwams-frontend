@@ -32,7 +32,7 @@ export function Sidebar({ sidebarItems }: { sidebarItems: NavItem[] }) {
             )}
             asChild
           >
-            <Link href={item.href}>
+            <Link href={item.href} className="relative">
               <item.icon className="h-4 w-4" />
               {item.title}
               {pathname === item.href && (
