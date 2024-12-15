@@ -9,6 +9,22 @@ export type EventRequest = {
   status: "pending" | "accepted" | "rejected";
 };
 
+export type Event = {
+  id: string;
+  name: string;
+  email: string;
+  eventType: string;
+  date: string;
+  time: string;
+  status: EventStatus;
+};
+
+export type EventStatus = "Event Request" | "Upcoming event";
+
+export type EventsTableProps = {
+  data: Event[];
+};
+
 export type DashboardStats = {
   totalCustomers: number;
   totalEvents: number;

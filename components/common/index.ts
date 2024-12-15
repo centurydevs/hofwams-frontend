@@ -1,14 +1,15 @@
-import { ToastMessage } from './toast-message';
-import { RadioGroupField } from "./radio-group-field";
-import { LoadingButton } from "./loading-button";
-import { ThemeProvider } from "./theme-provider";
 import { BackToTop } from "./back-to-top";
 import { CustomFormField, CustomFormFieldWithChild } from "./custom-form-field";
-import { Logo } from "./logo";
 import { EmailInput, EmailField } from "./email-input";
+import { LoadingButton } from "./loading-button";
+import { Logo } from "./logo";
 import { PasswordInput, PasswordField } from "./password-input";
 import { PasswordInputWithIndicator } from "./password-with-indicator";
+import { ProtectedRoute } from "./protected-route";
 import { PhoneInput } from "./phone-input";
+import { RadioGroupField } from "./radio-group-field";
+import { ThemeProvider } from "./theme-provider";
+import { ToastMessage } from "./toast-message";
 
 export {
   ThemeProvider,
@@ -23,6 +24,7 @@ export {
   PasswordInput,
   PasswordInputWithIndicator,
   PhoneInput,
+  ProtectedRoute,
   RadioGroupField,
   ToastMessage,
 };
