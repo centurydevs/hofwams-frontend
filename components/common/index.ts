@@ -1,3 +1,4 @@
+import { QueryProvider } from "./query-provider";
 import { BackToTop } from "./back-to-top";
 import { CustomFormField, CustomFormFieldWithChild } from "./custom-form-field";
 import { EmailInput, EmailField } from "./email-input";
@@ -26,5 +27,6 @@ export {
   PhoneInput,
   ProtectedRoute,
   RadioGroupField,
+  QueryProvider,
   ToastMessage,
 };
