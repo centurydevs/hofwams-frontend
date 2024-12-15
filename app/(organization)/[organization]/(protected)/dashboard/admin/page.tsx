@@ -3,7 +3,7 @@ import {
   EventsTable,
   StatsCards,
 } from "@/components/dashboard/organization/admin";
-import { ProtectedRoute } from "@/components/global/protected-route";
+import { ProtectedRoute } from "@/components/common/protected-route";
 import { UserRole } from "@/types";
 
 // Demo data

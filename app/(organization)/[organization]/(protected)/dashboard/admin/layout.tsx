@@ -1,7 +1,7 @@
 "use client";
 
 import { Header, Sidebar } from "@/components/dashboard/organization/layout";
-import { ProtectedRoute } from "@/components/global/protected-route";
+import { ProtectedRoute } from "@/components/common";
 
 import { adminNavItems } from "@/config";
 import { OrgDashboardLayoutProps, UserRole } from "@/types";
