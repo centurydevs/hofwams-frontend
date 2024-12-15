@@ -17,9 +17,9 @@ import {
   SheetTrigger,
   SheetHeader,
   SheetTitle,
-  ThemeToggler
+  ThemeToggler,
 } from "@/components/ui";
-import { Sidebar } from "./sidebar";
+import { NavItems } from "./nav-items";
 
 import { adminNavItems, staffNavItems } from "@/config";
 
@@ -52,7 +52,8 @@ export function Header({ userType }: { userType: string }) {
             <SheetHeader className="p-4 text-left">
               <SheetTitle>Navigation</SheetTitle>
             </SheetHeader>
-            <Sidebar
+
+            <NavItems
               sidebarItems={
                 userType === "admin" ? adminNavItems : staffNavItems
               }
