@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
+import { jwtVerify } from "jose";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -32,4 +33,16 @@ export const getStrengthText = (score: number) => {
   if (score <= 2) return "Weak password";
   if (score === 3) return "Medium password";
   return "Strong password";
+};
+
+export const verifyToken = async (token: string | undefined) => {
+  try {
+    if (!token) return null;
+    const secretKey = new TextEncoder().encode(process.env.JWT_SECRET || "");
+    const { payload } = await jwtVerify(token, secretKey);
+    return payload;
+  } catch (error) {
+    console.error("Token verification failed:", JSON.stringify(error, null, 2));
+    return null;
+  }
 };

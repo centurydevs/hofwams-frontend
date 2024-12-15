@@ -7,7 +7,12 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 import { Form } from "@/components/ui";
-import { EmailField, LoadingButton, PasswordField } from "@/components/common";
+import {
+  EmailField,
+  LoadingButton,
+  PasswordField,
+  ToastMessage,
+} from "@/components/common";
 
 import { LoginDto, loginSchema } from "@/schema/auth";
 
@@ -32,16 +37,14 @@ export function LoginForm({ onLoginSuccess }: { onLoginSuccess: () => void }) {
     console.log({ values });
 
     toast.success(
-      <div>
-        <h1>
-          {isPasswordless ? "OTP sent successfully!" : "Login successful!"}
-        </h1>
-        <p>
-          {isPasswordless
+      <ToastMessage
+        title={isPasswordless ? "OTP sent successfully!" : "Login successful!"}
+        details={
+          isPasswordless
             ? "Please enter the OTP to complete login."
-            : "Redirecting to dashboard"}
-        </p>
-      </div>
+            : "Redirecting to dashboard"
+        }
+      />
     );
 
     setIsLoading(false);

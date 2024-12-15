@@ -1,3 +1,4 @@
+import { ToastMessage } from './toast-message';
 import { RadioGroupField } from "./radio-group-field";
 import { LoadingButton } from "./loading-button";
 import { ThemeProvider } from "./theme-provider";
@@ -23,4 +24,5 @@ export {
   PasswordInputWithIndicator,
   PhoneInput,
   RadioGroupField,
+  ToastMessage,
 };

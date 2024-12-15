@@ -65,7 +65,7 @@ export class ApiClient {
             // Refresh failed, clear tokens and redirect to login
             TokenStorage.clearTokens();
             if (typeof window !== "undefined") {
-              window.location.href = "/login";
+              window.location.href = "/auth";
             }
             return Promise.reject(refreshError);
           }
