@@ -16,14 +16,11 @@ export default function AdminDashboardLayout({
 
   return (
     <ProtectedRoute requiredRole={UserRole.ADMIN}>
-      <div className="flex h-screen overscroll-none">
+      <div className="flex w-full max-w-[100vw] h-full overscroll-none">
         <Sidebar sidebarItems={adminNavItems} />
         <div className="flex-1 lg:pl-[256px]">
-          <Header userType="staff" />
-          {/* <main className="p-6 overscroll-none">{children}</main> */}
-          <main className="flex-1 overflow-y-auto bg-gradient-to-br from-background to-background/80">
-            {children}
-          </main>
+          <Header userType="admin" />
+          <main className="p-6 overscroll-none">{children}</main>
         </div>
       </div>
     </ProtectedRoute>

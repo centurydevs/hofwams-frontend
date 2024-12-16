@@ -277,7 +277,7 @@ export function CustomerTable({ customers }: CustomerTableProps) {
   });
 
   return (
-    <div className="space-y-4 overflow-hidden">
+    <div className="space-y-4 w-full max-w-[100vw]">
       <div className="flex items-center justify-between">
         <div className="relative max-w-sm">
           <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />

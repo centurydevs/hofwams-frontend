@@ -33,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head />
-      <body className={`${poppins.variable} ${fraunces.variable} antialiased`}>
+      <body
+        className={`${poppins.variable} ${fraunces.variable} antialiased min-h-svh w-full`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
