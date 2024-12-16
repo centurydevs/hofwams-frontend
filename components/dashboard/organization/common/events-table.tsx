@@ -110,8 +110,8 @@ export function EventsTable({ data }: { data: Event[] }) {
   }, [date, table])
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center gap-4">
+    <div className="space-y-4 max-w-[100vw]">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
         <div className="flex-1">
           <Input
             placeholder="Search events..."
@@ -151,6 +151,7 @@ export function EventsTable({ data }: { data: Event[] }) {
           + Create new event
         </Button>
       </div>
+
       <div className="rounded-md border">
         <Table>
           <TableHeader>
@@ -201,6 +202,7 @@ export function EventsTable({ data }: { data: Event[] }) {
           </TableBody>
         </Table>
       </div>
+      
       <div className="flex items-center justify-between">
         <div className="text-sm text-muted-foreground">
           Showing from {table.getState().pagination.pageSize * table.getState().pagination.pageIndex + 1} - {Math.min(

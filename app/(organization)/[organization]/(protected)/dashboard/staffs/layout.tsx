@@ -16,7 +16,7 @@ export default function StaffDashboardLayout({
 
   return (
     <ProtectedRoute requiredRole={UserRole.STAFF}>
-      <div className="flex h-screen overscroll-none">
+      <div className="flex w-full max-w-[100vw] h-full overscroll-none">
         <Sidebar sidebarItems={staffNavItems} />
         <div className="flex-1 lg:pl-[256px]">
           <Header userType="staff" />
