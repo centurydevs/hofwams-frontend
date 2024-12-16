@@ -1,3 +1,4 @@
+import { Avatar, AvatarFallback } from "./avatar";
 import { Button } from "./button";
 import { Badge } from "./badge";
 import {
@@ -16,6 +17,13 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./dialog";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -67,12 +75,22 @@ import {
   SheetHeader,
   SheetTitle,
 } from "./sheet";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./table";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
 import { Textarea } from "./textarea";
 import { ThemeToggler } from "./theme-toggler";
 import { Toaster } from "./sonner";
 
 export {
+  Avatar,
+  AvatarFallback,
   Button,
   Badge,
   Card,
@@ -87,6 +105,11 @@ export {
   CommandInput,
   CommandItem,
   CommandList,
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
@@ -127,6 +150,12 @@ export {
   SheetTrigger,
   SheetHeader,
   SheetTitle,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
   Tabs,
   TabsList,
   TabsTrigger,
