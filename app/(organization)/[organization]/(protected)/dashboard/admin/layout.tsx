@@ -20,7 +20,10 @@ export default function AdminDashboardLayout({
         <Sidebar sidebarItems={adminNavItems} />
         <div className="flex-1 lg:pl-[256px]">
           <Header userType="staff" />
-          <main className="p-6 overscroll-none">{children}</main>
+          {/* <main className="p-6 overscroll-none">{children}</main> */}
+          <main className="flex-1 overflow-y-auto bg-gradient-to-br from-background to-background/80">
+            {children}
+          </main>
         </div>
       </div>
     </ProtectedRoute>

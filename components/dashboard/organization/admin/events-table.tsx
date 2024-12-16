@@ -146,6 +146,7 @@ export function EventsTable({ data, title }: EventsTableProps) {
           </Popover>
         </div>
       </div>
+      
       <div className="rounded-md border">
         <Table>
           <TableHeader>

@@ -83,3 +83,71 @@ export interface PasswordChangeRequest {
   newPassword: string;
   confirmNewPassword: string;
 }
+
+export interface EventDetails {
+  id: string;
+  name: string;
+  description: string;
+  bannerUrl?: string;
+  hashTag?: string;
+  maxNumberOfAttendees: number;
+  inviteOnly: boolean;
+  maxNumberOfExtraGuest?: number;
+  availableSlot?: number;
+  slotTaken: number;
+  allowMinors: boolean;
+  meals: string[];
+  drinks: string[];
+  eventType: string;
+  startDate: Date;
+  eventOwnerName: string;
+  endDate: Date;
+  timezone: string;
+  location: string;
+  locationLatitude: number;
+  locationLongitude: number;
+  status: Status;
+  guests: EventRegistrationDto[]; // Add this line
+}
+
+export enum Status {
+  DRAFT = "DRAFT",
+  PUBLISHED = "PUBLISHED",
+  CANCELLED = "CANCELLED",
+  COMPLETED = "COMPLETED",
+}
+
+export interface EventRegistrationDto {
+  firstName: string;
+  eventId: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  age: number;
+  nationality: string;
+  comingWithExtra: boolean;
+  numberOfExtra?: number;
+  numberOfAdults?: number;
+  numberOfMinors?: number;
+  extraType?: "FAMILY" | "FRIENDS" | "COLLEAGUES";
+  preferredDishes: string[];
+  preferredDrinks: string[];
+  dietary: string[];
+  allergies: string[];
+  mealSize: "SMALL" | "MEDIUM" | "LARGE";
+  guestCountValid: boolean;
+}
+
+export type FieldValue = string | number | boolean | Date | string[];
+
+export interface Customer {
+  id: string;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  company: string;
+  totalOrders: number;
+  totalSpent: number;
+  lastOrderDate: string;
+  status: "active" | "inactive";
+}
