@@ -151,3 +151,28 @@ export interface Customer {
   lastOrderDate: string;
   status: "active" | "inactive";
 }
+
+export type MeasuringUnit = {
+  name: string;
+};
+
+export type IngredientType = {
+  id: string;
+  name: string;
+  purchaseDate: Date;
+  expiryDate: Date;
+  availableQuantity: number;
+  unitName: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type IngredientUsageType = {
+  id: string;
+  ingredientName: string;
+  assignedQuantity: number;
+  quantityUsed: number | null;
+  unitName: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
