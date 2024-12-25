@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsUpDown, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,17 +15,28 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useState } from "react";
 
-interface UnitAutocompleteProps {
-  value: string;
-  onChange: (value: string) => void;
+interface Category {
+  id: string;
+  name: string;
 }
 
-const defaultUnits = ["kg", "g", "l", "ml", "pcs"];
+interface CategoryAutocompleteProps {
+  categories: Category[];
+  value: string;
+  onChange: (value: string) => void;
+  onCreateCategory: (name: string) => void;
+}
 
-export function UnitAutocomplete({ value, onChange }: UnitAutocompleteProps) {
-  const [open, setOpen] = React.useState(false);
-  const [units, setUnits] = React.useState(defaultUnits);
+export function CategoryAutocomplete({
+  categories,
+  value,
+  onChange,
+  onCreateCategory,
+}: CategoryAutocompleteProps) {
+  const [open, setOpen] = useState(false);
+  const [newCategory, setNewCategory] = useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -36,44 +47,52 @@ export function UnitAutocomplete({ value, onChange }: UnitAutocompleteProps) {
           aria-expanded={open}
           className="w-full justify-between"
         >
-          {value || "Select unit..."}
+          {value
+            ? categories.find((category) => category.name === value)?.name
+            : "Select category..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-full p-0">
+      <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search unit..." />
+          <CommandInput
+            placeholder="Search category..."
+            onValueChange={setNewCategory}
+          />
           <CommandList>
             <CommandEmpty>
-              No unit found.
+              No category found.
               <Button
-                variant="link"
+                variant="outline"
+                size="sm"
+                className="mt-2 w-full"
                 onClick={() => {
-                  setUnits([...units, value]);
-                  onChange(value);
+                  onCreateCategory(newCategory);
+                  onChange(newCategory);
                   setOpen(false);
                 }}
               >
-                Create {value}
+                <Plus className="mr-2 h-4 w-4" />
+                Create {newCategory}
               </Button>
             </CommandEmpty>
 
             <CommandGroup>
-              {units.map((unit) => (
+              {categories.map((category) => (
                 <CommandItem
-                  key={unit}
+                  key={category.id}
                   onSelect={() => {
-                    onChange(unit);
+                    onChange(category.name);
                     setOpen(false);
                   }}
                 >
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      value === unit ? "opacity-100" : "opacity-0"
+                      value === category.name ? "opacity-100" : "opacity-0"
                     )}
                   />
-                  {unit}
+                  {category.name}
                 </CommandItem>
               ))}
             </CommandGroup>
