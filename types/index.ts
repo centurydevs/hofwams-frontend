@@ -34,6 +34,7 @@ export type NavItem = {
   title: string;
   icon: React.ElementType;
   href: string;
+  submenu?: NavItem[];
 };
 
 export type OrgDashboardLayoutProps = {
