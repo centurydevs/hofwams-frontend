@@ -15,6 +15,13 @@ export async function middleware(req: NextRequest) {
 
   // Get host for multi-tenant routing
   const host = req.headers.get("host") || "";
+  const allowedHosts = ["localhost:3000", "hofwams.com"];
+
+  // Check if host is allowed for multi-tenancy
+  if (!allowedHosts.some((allowedHost) => host.endsWith(allowedHost))) {
+    return NextResponse.next();
+  }
+
   const subdomain = host.split(".")[0];
   const isSubdomain = subdomain && subdomain !== "www" && subdomain !== host;
 
