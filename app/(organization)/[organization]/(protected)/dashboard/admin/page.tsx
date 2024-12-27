@@ -1,10 +1,15 @@
+"use client";
+
 import { format, addDays } from "date-fns";
 import {
-  EventsTable,
+  EventRequestTable,
   StatsCards,
 } from "@/components/dashboard/organization/admin";
 import { ProtectedRoute } from "@/components/common/protected-route";
+import { EventsTable } from "@/components/dashboard/organization/common";
+
 import { UserRole } from "@/types";
+import { events } from "@/constants/events";
 
 // Demo data
 const stats = {
@@ -32,8 +37,8 @@ export default function AdminDashboardPage() {
       <div className="space-y-6">
         <StatsCards stats={stats} />
         <div className="grid gap-6 md:grid-cols-2">
-          <EventsTable data={demoEvents} title="Upcoming Events" />
-          <EventsTable data={demoEvents} title="Event Requests" />
+          <EventsTable data={events} title="Upcoming Events" />
+          <EventRequestTable data={demoEvents} title="Event Requests" />
         </div>
       </div>
     </ProtectedRoute>
