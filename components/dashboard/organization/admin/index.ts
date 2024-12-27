@@ -1,5 +1,5 @@
-import { CustomerTable } from "./customer-table";
-import { EventsTable } from "./events-table";
+import { CustomerTable } from "./customer/customer-table";
+import { EventRequestTable } from "./event-requests-table";
 import { StatsCards } from "./stats-card";
 
-export { EventsTable, StatsCards, CustomerTable };
+export { EventRequestTable, StatsCards, CustomerTable };

@@ -143,14 +143,11 @@ export type FieldValue = string | number | boolean | Date | string[];
 
 export interface Customer {
   id: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phoneNumber: string;
-  company: string;
-  totalOrders: number;
-  totalSpent: number;
-  lastOrderDate: string;
-  status: "active" | "inactive";
+  phoneNumber?: string;
+  createdAt: Date;
 }
 
 export type MeasuringUnit = {

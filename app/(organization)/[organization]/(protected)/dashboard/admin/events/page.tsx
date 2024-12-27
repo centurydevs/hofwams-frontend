@@ -1,18 +1,9 @@
-import { addDays, format } from "date-fns";
-import { EventsTable } from "@/components/dashboard/organization/common/events-table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { EventStatus } from "@/types";
+import { EventRequestTable } from "@/components/dashboard/organization/admin";
+import { EventsTable } from "@/components/dashboard/organization/common";
 
-const events = Array.from({ length: 5 }, (_, i) => ({
-  id: i.toString(),
-  name: "Tade Taylor",
-  email: "Tade@gmail.com",
-  eventType: "Anniversary",
-  date: format(addDays(new Date(), i), "dd MMM yyyy"),
-  time: "2 pm",
-  status: (i % 2 === 0 ? "Event Request" : "Upcoming event") as EventStatus,
-}));
+import { eventReq, events } from "@/constants/events";
 
 const EventsPage = () => {
   return (
@@ -34,9 +25,7 @@ const EventsPage = () => {
             />
           </TabsContent>
           <TabsContent value="requests" className="space-y-4">
-            <EventsTable
-              data={events.filter((event) => event.status === "Event Request")}
-            />
+            <EventRequestTable data={eventReq} />
           </TabsContent>
         </Tabs>
       </div>
