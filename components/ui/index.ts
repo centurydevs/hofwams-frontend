@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback } from "./avatar";
 import { Button } from "./button";
 import { Badge } from "./badge";
+import { Calendar } from "./calendar";
 import {
   Card,
   CardHeader,
@@ -93,6 +94,7 @@ export {
   AvatarFallback,
   Button,
   Badge,
+  Calendar,
   Card,
   CardHeader,
   CardFooter,
