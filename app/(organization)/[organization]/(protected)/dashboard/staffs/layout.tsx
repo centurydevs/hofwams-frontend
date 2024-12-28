@@ -12,7 +12,7 @@ export default function StaffDashboardLayout({
 }: OrgDashboardLayoutProps) {
   const { organization } = params;
 
-  console.log({ organization });
+  console.log("organization", JSON.stringify(organization, null, 2));
 
   return (
     <ProtectedRoute requiredRole={UserRole.STAFF}>
